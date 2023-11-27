@@ -3,7 +3,7 @@
 
 namespace KompWetterstation {
 
-    public delegate void WetterObserver(double temp, bool regen, double wind);
+    public delegate string WetterObserver(double temp, bool regen, double wind);
 
     public class Wetterstation {
         private Random random;
@@ -47,7 +47,7 @@ namespace KompWetterstation {
             //}
 
             if (this.WetterEvent != null) {
-                this.WetterEvent(temp, regen, wind);
+                var result = this.WetterEvent(temp, regen, wind);
             }
         }
     }
